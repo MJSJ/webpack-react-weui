@@ -2,3 +2,6 @@ body{
 	font-size: 18px;
 	color: #333;
 }
+#app,body,html{
+	height: 100%;
+}
