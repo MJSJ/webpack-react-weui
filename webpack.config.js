@@ -13,9 +13,9 @@ module.exports={
     watch:true,
     output:{
         path: path.join(__dirname,'dist'),
-        publicPath: "/webpack/dist/",
-        filename: "js/[name].js",
-        chunkFilename: "js/[id].chunk.js"
+        publicPath: "/dist/",
+        filename: "[name].js",
+        chunkFilename: "[id].chunk.js"
     },
     module: {
         loaders: [	//加载器
@@ -58,7 +58,7 @@ module.exports={
 
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
     		favicon:'./src/img/favicon.ico', //favicon路径
-			filename:'/view/index.html',	//生成的html存放路径，相对于 path
+			filename:'index.html',	//生成的html存放路径，相对于 path
 			template:'./src/view/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			hash:true,	//为静态资源生成hash值
@@ -69,7 +69,7 @@ module.exports={
 
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
-    devServer:{
-    	contentBase:'./dist/view'
-    }
+    // devServer:{
+    // 	contentBase:'./dist/view'
+    // }
 };

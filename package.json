@@ -4,7 +4,10 @@
   "description": "webpack react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack & webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
+    "watch": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
+    "built": "webpack",
+    "wdev": "start npm run built && start npm run watch",
+    "dev": "webpack | webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
     "online": "webpack --config online.config.js & webpack-dev-server --hot --watch --inline --progress --colors --port 8080 --config online.config.js  --host 0.0.0.0"
   },
   "repository": {
@@ -35,6 +38,7 @@
     "jsx-loader": "^0.13.2",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "npm-run-all": "^3.0.0",
     "open-browser-webpack-plugin": "0.0.2",
     "postcss-loader": "^0.10.1",
     "px2rem-loader": "^0.1.7",
@@ -43,8 +47,7 @@
     "react-router": "^2.7.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.12.9"
   },
   "dependencies": {
     "react": "^15.3.1",
