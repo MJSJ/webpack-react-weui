@@ -14,7 +14,7 @@
 #说明
 
 ###编写代码
-	所有代码均在src下编写，css
+	所有代码均在src下编写
 **css目录:** 
 * base目录下放通用css，比如reset.css
 * page目录下放具体某页css，比如login.css
@@ -32,7 +32,7 @@
 * statistics.html指统计代码的模块，与js中tools下的统计不同，这个是直接往index.html中插入所有dom元素，而不是一个js
 
 	
-关于[hmtl-yu-plugin](https://github.com/yursile/html-yu-plugin)
+##关于[hmtl-yu-plugin](https://github.com/yursile/html-yu-plugin)
 
 这个工具可以动态生成css,js甚至html代码块。在webpack plugin配置如下：
 ```javascript

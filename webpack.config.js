@@ -13,7 +13,7 @@ module.exports={
     watch:true,
     output:{
         path: path.join(__dirname,'dist'),
-        publicPath: "/",
+        publicPath: "/",//webpack-server-dev下，跟path使用必需为/,不然坑B
         filename: "[name].js",
         chunkFilename: "[id].chunk.js"
     },
