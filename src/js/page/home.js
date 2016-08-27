@@ -7,25 +7,25 @@ const {
  	Page
 } = WeUI;
 
-import IconButton from '../../images/icon_nav_button.png';
-import IconCell from '../../images/icon_nav_cell.png';
-import IconToast from '../../images/icon_nav_toast.png';
-import IconDialog from '../../images/icon_nav_dialog.png';
-import IconProgress from '../../images/icon_nav_progress.png';
-import IconMsg from '../../images/icon_nav_msg.png';
-import IconArticle from '../../images/icon_nav_article.png';
-import IconActionSheet from '../../images/icon_nav_actionSheet.png';
-import IconIcons from '../../images/icon_nav_icons.png';
-import IconPanel from '../../images/icon_nav_panel.png';
-import IconTab from '../../images/icon_nav_tab.png';
-import IconSearchBar from '../../images/icon_nav_search_bar.png';
+import IconButton from '../../img/icon_nav_button.png';
+import IconCell from '../../img/icon_nav_cell.png';
+import IconToast from '../../img/icon_nav_toast.png';
+import IconDialog from '../../img/icon_nav_dialog.png';
+import IconProgress from '../../img/icon_nav_progress.png';
+import IconMsg from '../../img/icon_nav_msg.png';
+import IconArticle from '../../img/icon_nav_article.png';
+import IconActionSheet from '../../img/icon_nav_actionSheet.png';
+import IconIcons from '../../img/icon_nav_icons.png';
+import IconPanel from '../../img/icon_nav_panel.png';
+import IconTab from '../../img/icon_nav_tab.png';
+import IconSearchBar from '../../img/icon_nav_search_bar.png';
 
 
 export default class Home extends React.Component {
   	 state = {
         components: [{
             icon: <img src={IconButton}/>,
-            label: 'Button',
+            label: 'Buton',
             href: '#test',
         }, {
             icon: <img src={IconCell}/>,

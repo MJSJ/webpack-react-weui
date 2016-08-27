@@ -6,6 +6,8 @@ import ReactDom from "react-dom";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import 'weui';
 import '../css/index.less';
+import '../css/base/reset.css';
+import '../css/base/global.css';
 import { Router, Route, IndexRoute ,browserHistory,hashHistory} from 'react-router';
 const {
  Button,ButtonArea,Icon ,

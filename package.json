@@ -1,14 +1,11 @@
 {
   "name": "wp-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack react",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
-    "built": "webpack",
-    "wdev": "start npm run built && start npm run watch",
-    "dev": "webpack | webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
-    "online": "webpack --config online.config.js & webpack-dev-server --hot --watch --inline --progress --colors --port 8080 --config online.config.js  --host 0.0.0.0"
+    "dev": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
+    "online": "webpack --config online.config.js "
   },
   "repository": {
     "type": "git",
