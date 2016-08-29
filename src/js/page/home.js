@@ -1,11 +1,11 @@
 import React from 'react';
 import WeUI from 'react-weui';
-import 'weui';
+
 const {
  	Button,
- 	Grids,
- 	Page
+ 	Grids
 } = WeUI;
+import Page from "../tools/page.js"
 
 import IconButton from '../../img/icon_nav_button.png';
 import IconCell from '../../img/icon_nav_cell.png';
@@ -26,62 +26,58 @@ export default class Home extends React.Component {
         components: [{
             icon: <img src={IconButton}/>,
             label: 'Buton',
-            href: '#test',
+            href: '#/test',
         }, {
             icon: <img src={IconCell}/>,
             label: 'Cell',
-            href: '#cell'
+            href: '#/cell'
         }, {
             icon: <img src={IconToast}/>,
             label: 'Toast',
-            href: '#toast'
+            href: '#/toast'
         }, {
             icon: <img src={IconDialog}/>,
             label: 'Dialog',
-            href: '#dialog'
+            href: '#/dialog'
         }, {
             icon: <img src={IconProgress}/>,
             label: 'Progress',
-            href: '#progress'
+            href: '#/progress'
         }, {
             icon: <img src={IconMsg}/>,
             label: 'Msg',
-            href: '#msg'
+            href: '#/msg'
         }, {
             icon: <img src={IconArticle}/>,
             label: 'Article',
-            href: '#article'
+            href: '#/article'
         }, {
             icon: <img src={IconActionSheet}/>,
             label: 'ActionSheet',
-            href: '#actionsheet'
+            href: '#/actionsheet'
         }, {
             icon: <img src={IconIcons}/>,
             label: 'Icons',
-            href: '#icons'
+            href: '#/icons'
         }, {
             icon: <img src={IconPanel}/>,
             label: 'Panel',
-            href: '#panel'
+            href: '#/panel'
         }, {
             icon: <img src={IconTab}/>,
             label: 'Tab',
-            href: '#tab'
+            href: '#/tab'
         }, {
             icon: <img src={IconSearchBar}/>,
             label: 'SearchBar',
-            href: '#searchbar'
+            href: '#/searchbar'
         }]
     };
   	render(){
-
-  		var a = this.state.components[0];
-  		var b = {...a};
-  		console.log(a);
-  		console.log(b)
-
   		return(
-  			<Grids data={this.state.components}/>
+  			  <Page className="home" title="WeUI" subTitle="为微信Web服务量身设计">
+                <Grids data={this.state.components}/>
+            </Page>
   		)
   	}
 };

@@ -22,7 +22,7 @@ module.exports={
             {
                 test: /\.less$/,
                 // loader: 'style!css!px2rem?remUnit=75&remPrecision=8!postcss!less'
-                loader: 'style!css'
+                loader: ExtractTextPlugin.extract("style", "css-loader!less")
             },
             {
                 test: /\.js[x]?$/,

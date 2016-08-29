@@ -1,10 +1,11 @@
 import React from 'react';
 import WeUI from 'react-weui';
-import 'weui';
+import Page from "../tools/page.js";
+import "../../css/page/test.less"
+
 const {
  	Button,
- 	Grids,
- 	Page
+ 	Grids
 } = WeUI;
 
 
@@ -13,7 +14,19 @@ const {
 export default class Test extends React.Component {
   	render(){
   		return(
-  			<Button>test</Button>
+  			<Page className="button" title="Button" spacing>
+                <Button>按钮</Button>
+                <Button disabled>按钮</Button>
+
+                <Button type="warn">按钮</Button>
+                <Button type="warn" disabled>按钮</Button>
+
+                <Button type="default">按钮</Button>
+                <Button type="default" disabled>按钮</Button>
+
+         		<div className="sohu"></div>
+            <div className="border"></div>
+            </Page>
   		)
   	}
 };

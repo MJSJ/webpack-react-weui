@@ -4,15 +4,16 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-yu-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-
+var SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports={
 	entry:{
 		index:"./src/js/index.js",
+        response:"./src/js/tools/response.js"
 	},
     watch:true,
     output:{
-        path: path.join(__dirname,'dist'),
+        path: path.resolve(__dirname,'dist'),
         publicPath: "/",//webpack-server-dev下，跟path使用必需为/,不然坑B
         filename: "[name].js",
         chunkFilename: "[id].chunk.js"
@@ -21,8 +22,8 @@ module.exports={
         loaders: [	//加载器
             {
                 test: /\.less$/,
-                // loader: 'style!css!px2rem?remUnit=75&remPrecision=8!postcss!less'
-                loader: 'style!css'
+                // loader: 'style!css!px2rem?remUnit=100&remPrecision=8!postcss!less'
+                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8!postcss!less")
             },
             {
                 test: /\.js[x]?$/,
@@ -47,6 +48,32 @@ module.exports={
     postcss: [autoprefixer],
     plugins:[
 
+        //sprites 
+        new SpritesmithPlugin({
+            src: {
+                cwd: path.resolve(__dirname, 'src/img/sprites'),
+                glob: '*.png'
+            },
+            target: {
+                image: path.resolve(__dirname, 'src/img/sprite.png'),
+                css: [
+                // [path.resolve(__dirname, 'dist/spritesmith-generated/sprite.json'), {
+                //     format: 'json_texture'
+                // }],
+                    [path.resolve(__dirname, 'src/css/sprite.less'), {
+                        format: 'handlebars_based_template'
+                    }]
+                ]
+            },
+            apiOptions: {
+                cssImageRef: "../img/sprite.png"
+            },
+            customTemplates: {
+              
+                'handlebars_based_template': path.resolve(__dirname, 'rem.template.handlebars')
+            },
+        }),
+
         // new webpack.HotModuleReplacementPlugin(),//generate update.json
     	new webpack.ProvidePlugin({	//加载jq
             $: 'jquery'
@@ -62,10 +89,12 @@ module.exports={
 			template:'./src/view/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
-            // heads:['response'],
+            heads:['response'],
             // blockFile:"./src/view/statistics.html",
             // headBlockFile:"./src/view/loading.html"
 		}),
+
+      
 
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],

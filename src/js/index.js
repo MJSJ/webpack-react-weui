@@ -7,7 +7,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import 'weui';
 import '../css/index.less';
 import '../css/base/reset.css';
-import '../css/base/global.css';
 import { Router, Route, IndexRoute ,browserHistory,hashHistory} from 'react-router';
 const {
  Button,ButtonArea,Icon ,
@@ -26,8 +25,7 @@ import Test from "./page/test.js"
 class App extends React.Component {
   
     render(){
-        return(
-
+        return (
             <ReactCSSTransitionGroup
                 component="div"
                 transitionName="page"
@@ -36,11 +34,10 @@ class App extends React.Component {
                 style={{height: '100%'}}
             >
                 {React.cloneElement(this.props.children, {
-                    key: this.props.location.pathname
+                        key: this.props.location.pathname
                 })}
             </ReactCSSTransitionGroup>
-
-        )
+        );
     }
 };
 
