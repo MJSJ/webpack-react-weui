@@ -26,7 +26,7 @@ export default class Home extends React.Component {
         components: [{
             icon: <img src={IconButton}/>,
             label: 'Buton',
-            href: '#/test',
+            href: '#/button',
         }, {
             icon: <img src={IconCell}/>,
             label: 'Cell',

@@ -5,15 +5,18 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
+// var DOMAIN = "../../"
+// var ROOT = "dist/"
+var DOMAIN = "http://news.sohu.com/upload/"
+var ROOT = "yursile/fsdafwe/"
 module.exports={
 	entry:{
     		index:"./src/js/index.js",
-            // vender:["./src/js/tools/response.js"]
     	},
     watch:true,
     output:{
-        path: path.join(__dirname,'dist'),
-        publicPath: "../",
+        path: path.join(__dirname,ROOT),
+        publicPath:DOMAIN + ROOT,
         filename: "js/[name].js",
         chunkFilename: "js/[id].chunk.js"
     },
@@ -21,8 +24,8 @@ module.exports={
          loaders: [ //加载器
             {
                 test: /\.less$/,
-                // loader: 'style!css!px2rem?remUnit=75&remPrecision=8!postcss!less'
-                loader: ExtractTextPlugin.extract("style", "css-loader!less")
+                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!postcss!less") //不用rem
+                // loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8!postcss!less")
             },
             {
                 test: /\.js[x]?$/,
@@ -40,7 +43,7 @@ module.exports={
             },
             {
                 test: /\.(png|jpg)$/, 
-                loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+                loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             }
         ]
     },
@@ -63,16 +66,16 @@ module.exports={
 		    except: ['$super', '$', 'exports', 'require']	//排除关键字
 		}),
     	new HtmlWebpackPlugin({						//根据模板插入css/js等生成最终HTML
-    		favicon:'./src/img/favicon.ico', //favicon路径
+    		// favicon:'./src/img/favicon.ico', //favicon路径
 			filename:'/view/index.html',	//生成的html存放路径，相对于 path
 			template:'./src/view/index.html',	//html模板路径
 			inject:true,	//允许插件修改哪些内容，包括head与body
 			// hash:true,	//为静态资源生成hash值
             // heads:['response'],
             // blockFile:"./src/view/statistics.html",
-            // headBlockFile:"./src/view/loading.html"
+            headBlockFile:"./src/view/loading.html"
 		}),
-        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+        // new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
     // devServer:{
     // 	contentBase:'./dist/view'

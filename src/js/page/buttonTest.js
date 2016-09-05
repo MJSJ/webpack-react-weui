@@ -1,7 +1,7 @@
 import React from 'react';
 import WeUI from 'react-weui';
 import Page from "../tools/page.js";
-import "../../css/page/test.less"
+import "../../css/page/buttonTest.less"
 
 const {
  	Button,

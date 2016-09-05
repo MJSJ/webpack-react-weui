@@ -20,10 +20,19 @@ const {
 } = WeUI;
 
 import Home from "./page/home.js"
-import Test from "./page/test.js"
+import ButtonTest from "./page/buttonTest.js"
+import CellTest from "./page/cell.js"
+import DialogTest from "./page/dialogTest.js"
+import panelTest from "./page/panelTest.js"
 
 class App extends React.Component {
   
+    /**
+     * ReactCSSTransitionGroup
+     * 控制两个组件页面切换效果
+     * 所有的组件都必须有key字段，所以使用了React.cloneElement
+     * 这些组件通过children的形式传入，对应Route component={App}下的孩子
+     */
     render(){
         return (
             <ReactCSSTransitionGroup
@@ -42,13 +51,21 @@ class App extends React.Component {
 };
 
 class MyRoute extends React.Component {
-  
+    /**
+     * 配好路由
+     * 默认页面是indexRoute，home页面
+     * 在home导航页面里通过指定的path可以跳到对应的component
+     */
     render(){
+
         return(
             <Router history={hashHistory}>
                 <Route path="/" component={App}>
                   <IndexRoute component={Home} />
-                  <Route path="test" component={Test}/>
+                  <Route path="button" component={ButtonTest}/>
+                  <Route path="cell" component={CellTest}/>
+                  <Route path="dialog" component={DialogTest}/>
+                  <Route path="panel" component={panelTest}/>
                 </Route>
             </Router>
         )
