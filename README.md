@@ -1,5 +1,5 @@
-# webpack-h5
-### webpack h5制作模板
+# webpack-react-weui
+### react微信开发模板
 
 * **es6**
 * **reactweui**
