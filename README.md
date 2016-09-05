@@ -32,7 +32,7 @@
 	|	└── sprite.less           # 雪碧图生成的样式
 	|
 	├── js
-	|	├── page                  # 
+	|	├── page                  # 存放各页面
 	|   |	├── home              # home页js
     |   |   ├── buttonTest.js     # button页js
     |   |   └── cell.js           # cell页js
@@ -47,8 +47,6 @@
     |   |   └── b.png   
     |   |       
 	|   └── sprite.png            #webpack执行后会把sprites中的图片生成一张雪碧图sprite.png
-    |
-	├── index.html                # 主html,不用在里面写loading,自适应,统计的代码
 	|
 	└── view
 		├── index.html            # 主html,所有react的逻辑全在index.html里
