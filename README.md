@@ -7,6 +7,7 @@
 * **htmltemplate**
 
 # get started
+* 依赖webpack,如没有安装,npm install -g webpack webpack-dev-server
 * **npm run dev** 在本地8080端口起测试服务,引用的所有文件都在内存，不在硬盘上，更新速度飞快
 * **npm run online** 在硬盘上生成online.config.js中指定的ROOT文件夹，直接发布ROOT包即可
 
