@@ -116,4 +116,5 @@ new HtmlWebpackPlugin({
 ```
 # 更新日志
 * **解决windows shell问题**
-* **添加底部导航，tab板块问题**
+* **添加底部导航，tab板块**
+* **添加实时动态搜索，search板块**

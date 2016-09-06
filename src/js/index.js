@@ -25,6 +25,7 @@ import CellTest from "./page/cell.js"
 import DialogTest from "./page/dialogTest.js"
 import panelTest from "./page/panelTest.js"
 import TabBarTest from "./page/tabbarTest.js"
+import SearchBarTest from "./page/searchTest.js"
 
 class App extends React.Component {
   
@@ -68,6 +69,7 @@ class MyRoute extends React.Component {
                   <Route path="dialog" component={DialogTest}/>
                   <Route path="panel" component={panelTest}/>
                   <Route path="tab" component={TabBarTest}/>
+                  <Route path="searchbar" component={SearchBarTest}/>
                 </Route>
             </Router>
         )
