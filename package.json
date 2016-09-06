@@ -1,7 +1,7 @@
 {
-  "name": "wp-react",
+  "name": "webpack-react-weui",
   "version": "1.0.2",
-  "description": "webpack react",
+  "description": "webpack react weui",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",

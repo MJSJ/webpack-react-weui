@@ -75,7 +75,7 @@ export default class Home extends React.Component {
     };
   	render(){
   		return(
-  			  <Page className="home" title="WeUI" subTitle="为微信Web服务量身设计">
+		    <Page className="home" title="WeUI" subTitle="为微信Web服务量身设计">
                 <Grids data={this.state.components}/>
             </Page>
   		)

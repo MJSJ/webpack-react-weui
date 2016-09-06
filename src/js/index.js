@@ -24,6 +24,7 @@ import ButtonTest from "./page/buttonTest.js"
 import CellTest from "./page/cell.js"
 import DialogTest from "./page/dialogTest.js"
 import panelTest from "./page/panelTest.js"
+import TabBarTest from "./page/tabbarTest.js"
 
 class App extends React.Component {
   
@@ -66,6 +67,7 @@ class MyRoute extends React.Component {
                   <Route path="cell" component={CellTest}/>
                   <Route path="dialog" component={DialogTest}/>
                   <Route path="panel" component={panelTest}/>
+                  <Route path="tab" component={TabBarTest}/>
                 </Route>
             </Router>
         )
